@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        /* border: 2px solid brown; */
+        display: flex;
+        flex-wrap: wrap;
+        height: 100vh;
+    }
+
+    .image{
+        /* border: 2px solid red; */
+        width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(255, 0, 153);
+    }
+
+    .signup{
+        /* border: 2px solid blue; */
+        width: 30%;
+        /* display: flex;
+        flex-wrap: wrap; */
+        background-color: blueviolet;
+    }
+
+    .nav{
+        margin-top: 20px;
+        list-style-type: none;
+    }
+
+    .nav>li{
+        display: inline;
+    }
+
+    .nav>li{
+        padding-left: 10px;
+        padding-right: 10px;
+        
+    }
+
+    #logo{
+        padding-left: 50px;
+        padding-right: 70px;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    li>a{
+        text-decoration: none;
+        color: black;
+    }
+
+    .navi{
+        margin-top: 20px;
+        list-style-type: none;
+    }
+
+    .navi>li{
+        padding-left: 20px;
+        display: inline;
+    }
+
+    .signup.navi>li>a {
+        
+    }
+
+    #sp{
+        padding-left: 100px;
+    }
+
+    #title{
+        padding-top: 100px;
+        padding-left: 80px;
+        font-size: 80px;
+        width: 600px;
+    }
+
+    #desc{
+        margin-top: 40px;
+        padding-left: 80px;
+        width: 300px;
+        font-size: large;
+        font-weight: 200;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #first, #last, #mail, #pass{
+        margin-left: 50px;
+        margin-top: 10px;
+        width: 200px;
+        height: 30px;
+    }
+
+    form>p{
+        margin-top: 50px;
+        margin-left: 50px;
+        font-size: larger;
+        font-weight: bold;
+        width: 200px;
+    }
+
+    #captcha{
+        margin-top: 20px;
+        font-size: x-small;
+        font-weight: normal;
+    }
+
+    #cbox{
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+
+    #submit, #google{
+        margin-top: 10px;
+        margin-left: 50px;
+        width: 200px;
+        height: 30px;
+    }
+
+</style>
+
+<body>
+
+    <div class="container">
+        
+        <div class="image">
+            <!-- Image -->
+            <ul class="nav">
+                <li id="logo"> <a href="#">Dropbox</a> </li>
+                <li> <a href="#">For Teams</a> </li>
+                <li> <a href="#">For Individuals</a> </li>
+            </ul>
+
+            <p id="title">
+                Put your creative energy to work, with Dropbox
+            </p>
+
+            <p id="desc">
+                Dropbox is a modern workspace designed to reduce busywork-so you can focus on the things that matter.
+            </p>
+
+        </div>
+    
+        <div class="signup">
+            <!-- Signup -->
+            <ul class="navi">
+                <li id="sp">  </li>
+                <li> <a href="#">Sign up</a> </li>
+                <li> <a href="#">Download</a> </li>
+            </ul>
+
+            <form action="#">
+                <p>Sign-up</p>
+                <input id="first" type="text" placeholder="First Name"> <br>
+                <input id="last" type="text" placeholder="Last Name"> <br>
+                <input id="mail" type="email" placeholder="Email"> <br>
+                <input id="pass" type="password" placeholder="Password"> <br>
+
+                <p id="captcha">This page is protected by reCAPTCHA, and subject to the Google Privacy Policy and Terms of service</p>
+
+                <input type="checkbox" name="" id="cbox"> I agree to the Dropbox Terms <br>
+
+                <button type="submit" id="submit" style="background-color: aqua;">Sign up</button> <br>
+                <input type="button" id="google" value="Sign up with Google">
+            </form>
+
+        </div>
+    </div>
+
+</body>
+</html>
