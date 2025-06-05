@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS</title>
+</head>
+<body>
+
+    <script>
+        const posts = [
+            {title:"RCB", desc:"1 time winner..RCB"},
+            {title:"CSK", desc:"5 times winner..CSK"}
+        ]
+
+        function getAllPost(){
+            setTimeout(()=>{
+                for(var key in posts){
+                    document.writeln(`<li>${posts[key].title}</li><br>`);
+                }
+            },2000); //wait for 2 sec.
+        }
+
+        // getAllPost(); //call the getAllPost()
+
+        newPost = {title:"MI", desc:"5 times winner..MI"};
+        
+        createNewPost(newPost,getAllPost); //getAllPost act as a Call-Back Function
+
+        function createNewPost(post,readAllPost){ //createNewPost simulates an async operation using setTimeout
+            setTimeout(()=>{ //setTimeout used as async
+                posts.push(post);
+                readAllPost(); // After 4 seconds, it calls readAllPost() — that’s the callback.
+            },4000); //6sec wait -> 4+2
+        }
+
+    </script>
+</body>
+</html>

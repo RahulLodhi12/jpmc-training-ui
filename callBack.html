@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Back</title>
+</head>
+<body>
+    <button type="button" onclick="work()">Click Me</button>
+
+    <script>
+
+        function confirmMsg(query,yes,no){
+            if(confirm(query)){
+                yes(); //called showYes()
+            }
+            else{
+                no(); //called showNo()
+            }
+        }
+
+        function showYes(){
+            alert("Yes hi yes..");
+        }
+
+        function showNo(){
+            alert("No hi no..");
+        }
+
+        function work(){
+            confirmMsg("Are you sure ?",showYes,showNo); //"showYes" and "showNo" are Call Back Function -> not called immediately but later.
+        }
+
+    </script>
+</body>
+</html>

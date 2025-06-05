@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with JS</title>
+</head>
+
+
+<body>
+
+    <div id="box">
+
+    </div>
+
+    <p id="paraNew">
+        A new para with some text...
+    </p>
+
+    <select>
+        <option>Select your ID</option>
+        <script>
+            for (let index = 476; index < 578; index++) {
+                document.write("<option>" + index + "</option>")
+            }
+        </script>
+    </select>
+
+    <button id="register" onclick="buttonClick();">REGISTER</button>
+
+    <script>
+        
+        document.write("On the body this..."); //used to write on webpage.
+        console.log("JS running now...");
+        document.body.style.backgroundColor = "brown";
+        document.write(document.getElementById('paraNew').innerHTML);
+        document.getElementById('paraNew').innerHTML += "Addded at runtime";
+
+        //  JS Stuff here
+        document.getElementById('box').innerHTML = "Changed from JS...";
+
+
+        function buttonClick() {
+            // alert('The button was just clicked...');
+            document.getElementById('register').innerHTML = "CLICKED"; //change the texted
+        }
+    </script>
+</body>
+
+</html>
