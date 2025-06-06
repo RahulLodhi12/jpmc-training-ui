@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String to Alphabet Order</title>
+</head>
+<body>
+
+    <form action="#" onsubmit="mySort()">
+        <input type="text" id="string" placeholder="Enter any Text">
+        <button type="submit">Sort</button>
+    </form>
+
+    <p>Sorted String:</p>
+    <p id="ans"></p>
+
+    <script>
+
+        function mySort(){
+            var text = document.getElementById("string").value;
+
+            var chars = text.split('');
+
+            console.log(chars);
+
+            chars.sort();
+
+            console.log(chars);
+
+            var res="";
+            for(var key in chars){
+                res+=chars[key]
+            }
+
+            document.getElementById("ans").innerHTML = res;
+        }
+
+    </script>
+</body>
+</html>

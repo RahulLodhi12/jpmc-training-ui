@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest String</title>
+</head>
+<body>
+    <form action="#" onsubmit="mySort()">
+        <input type="text" id="string" placeholder="Enter any Text">
+        <button type="submit">Longest Word</button>
+    </form>
+
+    <p>Longest Word:</p>
+    <p id="ans"></p>
+
+    <script>
+         function mySort(){
+            var text = document.getElementById("string").value;
+
+            var words = text.split(' ');
+
+            console.log(words);
+
+            var res="";
+            var len=-1;
+
+            words.forEach(word => {
+                if(word.length>len){
+                    len=word.length;
+                    res=word;
+                }
+            });
+
+            console.log(res);
+
+            document.getElementById("ans").innerHTML = res;
+
+        }
+    </script>
+</body>
+</html>

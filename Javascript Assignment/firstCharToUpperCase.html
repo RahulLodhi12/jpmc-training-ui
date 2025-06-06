@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Character to Upper-Case</title>
+</head>
+<body>
+    <form action="#" onsubmit="mySort()">
+        <input type="text" id="string" placeholder="Enter any Text">
+        <button type="submit">Upper Case</button>
+    </form>
+
+    <p>First Word in Upper Case:</p>
+    <p id="ans"></p>
+
+    <script>
+         function mySort(){
+            var text = document.getElementById("string").value;
+
+            var words = text.split(' ');
+
+            console.log(words);
+
+            words.forEach((word,idx) => {
+                words[idx] = word.charAt(0).toLocaleUpperCase() + word.slice(1); //modify -> change to Upper case + add the rest word.
+            });
+
+            console.log(words);
+
+            var res="";
+            for(var i in words){
+                res += words[i];
+                res+=" ";
+            }
+
+            document.getElementById("ans").innerHTML = res;
+
+        }
+    </script>
+</body>
+</html>
