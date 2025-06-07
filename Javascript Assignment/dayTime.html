@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day and Time</title>
+</head>
+<body>
+    <p id="day"></p>
+    <p id="clock"></p>
+    <button onclick="time()">Digital Clock</button>
+
+    <script>
+
+        function time(){
+            setInterval(()=>{
+                console.log(new Date());
+                document.getElementById("clock").innerHTML = new Date().toLocaleTimeString();
+            },1000)
+
+            const days = ["Sun","Mon","Tue","Wed","Thur","Fri","Sat"];
+
+            document.getElementById("day").innerHTML = days[new Date().getDay()];
+        }
+
+    </script>
+</body>
+</html>

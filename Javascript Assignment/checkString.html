@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check String</title>
+</head>
+<body>
+
+    <!-- <form action="#" onsubmit="isString()">
+        <input id="str" placeholder="Enter a value">
+        <button type="submit">Check isString</button> 
+    </form> -->
+
+    <p id="res"></p>
+
+    <script>
+        function isString(input){
+
+            if(typeof input == 'string'){
+                document.getElementById("res").innerHTML = "String"
+            }
+            else{
+                document.getElementById("res").innerHTML = "Not String"
+            }
+        }
+
+        // isString(1223);
+        isString("rahul");
+        isString(true);
+        isString({11:22});
+
+    </script>
+</body>
+</html>

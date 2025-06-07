@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function check(str,start){
+            var len = start.length;
+            var sub = str.substring(0,len); //substring with length of start
+
+            if(sub==start){
+                document.writeln("Start with same parts..");
+            }
+            else{
+                document.writeln("Different..");
+            }
+        }
+
+        check("greatRahul","greateae");
+    </script>
+</body>
+</html>

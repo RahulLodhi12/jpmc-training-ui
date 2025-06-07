@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Fetch</title>
+</head>
+
+<body>
+    <script>
+
+        async function apiFetch() {
+
+            try {
+                const response = await fetch("https://api.github.com/users");
+                if (!response.ok) {
+                    throw new Error("Network response was not OK..");
+                }
+
+                const jsonData = await response.json();
+
+                //display
+                document.writeln("<table border='1'>")
+                document.writeln("<thead>")
+                document.writeln("<th>Login</th>")
+                document.writeln("<th>Profile Pic</th>")
+                document.writeln("<th>User Type</th>")
+                document.writeln("<th>Followers</th>")
+                document.writeln("<th>Repos</th>")
+                document.writeln("</thead>")
+
+                for (var key in jsonData) {
+                    document.writeln("<tr>")
+                    document.writeln(`<td> ${jsonData[key].login} </td>`)
+                    document.writeln(`<td> <img width=200px height=200px src="${jsonData[key].avatar_url}" alt=""> </td>`)
+                    document.writeln(`<td> ${jsonData[key].user_view_type} </td>`)
+                    const response2 = await fetch(`https://api.github.com/users/${jsonData[key].login}`);
+                    const jsonData2 = await response2.json();
+
+                    document.writeln(`<td> ${jsonData2.followers} </td>`)
+                    document.writeln(`<td> ${jsonData2.public_repos} </td>`)
+                    document.writeln("</tr>")
+                }
+                document.writeln("</table>")
+
+            } catch (error) {
+                document.writeln("Error");
+            }
+
+        }
+
+        apiFetch();
+    </script>
+
+</body>
+
+</html>

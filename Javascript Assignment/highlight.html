@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight</title>
+</head>
+<body>
+
+    <p>Lorem ipsum dolor sit <b>amet consectetur adipisicing elit</b>. Saepe <b>illum eos veritatis</b>  voluptatem? Vel deleniti doloremque nulla ut, reprehenderit amet vero minus pariatur <b>quis culpa dignissimos</b> . Est facere consectetur exercitationem.</p>
+
+    <button type="button" onclick="highlight()">Click Me</button>
+
+    <script>
+        function highlight(){
+            const allTags = document.getElementsByTagName("b");
+            for(var i=0;i<allTags.length;i++){
+                allTags[i].style.backgroundColor = "yellow";
+            }
+
+        }
+    </script>
+</body>
+</html>

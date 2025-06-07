@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Not Repeating Character</title>
+</head>
+<body>
+    <script>
+
+        function countChar(str){
+            const freq = {};
+    
+            for(var ch of str){
+                if(freq[ch]){
+                    freq[ch] = freq[ch]+1;
+                }
+                else{
+                    freq[ch]=1;
+                }
+            }
+    
+            var res=""
+            for(var key in freq){
+                console.log(key+" " + freq[key]);
+                if(freq[key]==1){
+                    res+=key;
+                }
+            }
+
+            document.writeln(res);
+        }
+
+        countChar("rahullodhi");
+    </script>
+</body>
+</html>
