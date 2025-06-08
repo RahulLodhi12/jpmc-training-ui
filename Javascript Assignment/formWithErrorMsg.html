@@ -5,7 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    #msg1, #msg2, #msg3{
+        color: red;
+    }
+</style>
 <body>
-    
+    <form action="#" onsubmit="validate()">
+        <input type="text" id="name" placeholder="Enter your Name"> <span id="msg1"></span> <br>
+        <input type="text" id="id" placeholder="Enter your EmpId"> <span id="msg2"></span> <br>
+        <input type="text" id="address" placeholder="Your Address"> <span id="msg3"></span> <br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validate(){
+            var name = document.getElementById("name").value;
+            if(name.length==0 || !/^[a-zA-Z ]+$/.test(name)){
+                document.getElementById("msg1").innerHTML = "Invalid Name..";
+                console.log("Invalid..");
+            }
+            else{
+                document.getElementById("msg1").innerHTML = "";
+                console.log("Valid..");
+            }
+
+            var id = document.getElementById("id").value;
+            if(id.length<7 || !/^[0-9]+$/.test(id)){
+                document.getElementById("msg2").innerHTML = "Invalid Id..";
+                console.log("Invalid..");
+            }
+            else{
+                document.getElementById("msg2").innerHTML = "";
+                console.log("Valid..");
+            }
+
+            var address = document.getElementById("address").value;
+            if(address.length==0 || !/^[a-zA-Z ]+$/.test(address)){
+                document.getElementById("msg3").innerHTML = "Invalid Address..";
+                console.log("Invalid..");
+            }
+            else{
+                document.getElementById("msg3").innerHTML = "";
+                console.log("Valid..");
+            } 
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countSubstring(str,word){
+            let n = str.length;
+            let k = word.length;
+            
+            let i=0,j=0;
+            let count=0;
+            while(j<n){
+                if(str[j]==word[0]){
+                    let sub = str.substring(j,j+k);
+                    if(word==sub){
+                        count++;
+                        j=j+k;
+                        i=j;
+                    }
+                    else{
+                        j++;
+                    }
+                }
+                else{
+                    j++;
+                }
+            }
+
+            document.writeln(count);
+        }
+
+        countSubstring("hellohelloHELLOrahukhello","hello");
+    </script>
+</body>
+</html>
